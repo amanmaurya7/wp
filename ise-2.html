@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator Program</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #fafafa;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            flex-direction: column;
+        }
+
+        .container {
+            background-color: #ffdab9;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+
+        h2 {
+            color: #d67d3e;
+            font-size: 2em;
+        }
+
+        label {
+            display: block;
+            margin: 10px 0 5px 0;
+            font-size: 1.1em;
+            color: #333;
+        }
+
+        input {
+            padding: 10px;
+            width: 200px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            margin-bottom: 20px;
+        }
+
+        button {
+            background-color: #d67d3e;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1em;
+            margin: 10px;
+            transition: background-color 0.3s;
+        }
+
+        button:hover {
+            background-color: #bf692d;
+        }
+
+        #result {
+            margin-top: 20px;
+            font-size: 1.5em;
+            color: #555;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h2>Calculator Program</h2>
+
+        <label for="num1">Enter first number:</label>
+        <input type="number" id="num1">
+
+        <label for="num2">Enter second number:</label>
+        <input type="number" id="num2"><br>
+
+        <button onclick="calculate('add')">Add</button>
+        <button onclick="calculate('multiply')">Multiply</button>
+        <button onclick="calculate('divide')">Divide</button>
+        <button onclick="calculate('subtract')">Subtract</button>
+
+        <div id="result"></div>
+    </div>
+
+    <script>
+        function calculate(operation) {
+            const num1 = parseFloat(document.getElementById("num1").value);
+            const num2 = parseFloat(document.getElementById("num2").value);
+            let result;
+
+            if (operation === 'add') {
+                result = num1 + num2;
+            } else if (operation === 'multiply') {
+                result = num1 * num2;
+            } else if (operation === 'divide') {
+                result = num1 / num2;
+            } else if (operation === 'subtract') {
+                result = num1 - num2;
+            }
+
+            document.getElementById("result").innerText = Result: ${result};
+        }
+    </script>
+
+</body>
+</html>
